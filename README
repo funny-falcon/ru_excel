@@ -1,0 +1,21 @@
+= ru_excel
+
+ru_excel is a library for genreration MsExcel files.
+It is a port of pyExcelerator tunned for fast file generation (in fact it even faster than pyExcelerator)
+
+Currently it doesn't support formulas, sorry.
+
+Home page: http://github.com/funny-falcon/ru_excel
+
+== Documentation
+
+API is mostly ported from pyExcelerator, so that you can reference to it (and xlwt)
+
+== ToDo
+
+- Port fixes from xlwt
+- Add support for Formulas
+
+== Copyright
+
+Copyright by Sokolov Yura aka funny_falcon

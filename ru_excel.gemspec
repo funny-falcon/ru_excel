@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{ru_excel}
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Sokolov Yura aka funny_falcon"]
-  s.date = %q{2011-05-18}
+  s.date = %q{2011-06-24}
   s.description = %q{Port of pyExcelerator tunned for faster .xls generation}
   s.email = %q{funny.falcon@gmail.com}
   s.extra_rdoc_files = [
@@ -35,7 +35,8 @@ Gem::Specification.new do |s|
     "lib/ru_excel/style.rb",
     "lib/ru_excel/unicode_utils.rb",
     "lib/ru_excel/workbook.rb",
-    "lib/ru_excel/worksheet.rb"
+    "lib/ru_excel/worksheet.rb",
+    "ru_excel.gemspec"
   ]
   s.homepage = %q{http://github.com/funny-falcon/ru_excel}
   s.require_paths = ["lib"]

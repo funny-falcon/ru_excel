@@ -341,7 +341,7 @@ module Excel
 
 =begin
     This  record  specifies if the formulas in the workbook can use natural
-    language  formulas”.  This  type  of  formula can refer to cells by its
+    language  formulasâ€.  This  type  of  formula can refer to cells by its
     content or the content of the column or row header cell.
 
     Record USESELFS, BIFF8
@@ -597,7 +597,7 @@ module Excel
     49      Text        @
 =end
     def numberFormatRecord(idx, fmtstr)
-        get_biff_data(0x041E,  [ idx, upack2(fmtstr)].pack('va'))
+        get_biff_data(0x041E,  [ idx ].pack('v') + upack2(fmtstr))
     end
 
 
@@ -1050,7 +1050,7 @@ module Excel
     [9]         1           Not used (BIFF5-BIFF8 only, not written
                             in BIFF2-BIFF4)
 
-    If the panes are frozen, pane 0 is always active, regardless
+    If the panes are frozen, paneÂ 0 is always active, regardless
     of the cursor position. The correct identifiers for all possible
     combinations of visible panes are shown in the following pictures.
 
@@ -1413,10 +1413,10 @@ module Excel
 =begin
     This record is part of the Calculation Settings Block.
     It stores which method is used to show cell addresses in formulas.
-    The “RC” mode uses numeric indexes for rows and columns,
-    i.e. “R(1)C(-1)”, or “R1C1:R2C2”.
-    The “A1” mode uses characters for columns and numbers for rows,
-    i.e. “B1”, or “$A$1:$B$2”.
+    The â€œRCâ€ mode uses numeric indexes for rows and columns,
+    i.e. â€œR(1)C(-1)â€, or â€œR1C1:R2C2â€.
+    The â€œA1â€ mode uses characters for columns and numbers for rows,
+    i.e. â€œB1â€, or â€œ$A$1:$B$2â€.
 
     Record REFMODE, BIFF2-BIFF8
 
@@ -1457,7 +1457,7 @@ module Excel
 #class SaveRecalcRecord < BiffRecord
 =begin
     This record is part of the Calculation Settings Block.
-    It contains the “Recalculate before save” option in
+    It contains the â€œRecalculate before saveâ€ option in
     Excel's calculation settings dialogue.
 
     Record SAVERECALC, BIFF3-BIFF8

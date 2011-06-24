@@ -94,7 +94,7 @@ module Excel
     def _add_style(style)
         num_format_str = style.num_format_str
         num_format_idx = @_num_formats[num_format_str] ||=
-            163 + @_num_formats.length - Std_num_fmt_list.length
+            164 + @_num_formats.length - Std_num_fmt_list.length
         font = style.font
         font_idx = @_fonts[font] ||= @_fonts.length + 1
         xf = [font_idx, num_format_idx, style.alignment, style.borders, style.pattern, style.protection]
@@ -118,8 +118,8 @@ module Excel
     end
 
     def _all_num_formats
-        formats = @_num_formats.select{|k, v| v>=163}.to_a.each{|a| a.reverse!}
-        formats.map!{|fmtidx, fmtstr| BiffRecord.numberFormatRecord(fmtidx, fmtstr)}
+        formats = @_num_formats.to_a.select{|k, v| v>163}
+        formats = formats.map{|fmtstr, fmtidx| BiffRecord.numberFormatRecord(fmtidx, fmtstr)}
         formats.join('')
     end
 
